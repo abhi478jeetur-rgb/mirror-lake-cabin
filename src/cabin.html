@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#17231f" />
+    <meta name="description" content="Explore a living alpine valley, built entirely from geometry in 67js." />
+    <title>67js · Mirror Lake Cabin</title>
+  
+  </head>
+  <body>
+    <main>
+      <header class="world-header">
+        <a class="brand" href="https://github.com/codepawl/67.js" target="_blank" aria-label="67js on GitHub">67js</a>
+        
+        <button id="save-image">Save PNG <span aria-hidden="true">↗</span></button>
+      </header>
+      <div class="landscape-title">
+        <h1>Mirror Lake Cabin</h1>
+        <p>A log cabin on an alpine lake, built entirely from code in 67js</p>
+      </div>
+      <canvas id="viewport" tabindex="0" aria-label="Mirror Lake Cabin. Drag or use arrow keys to orbit; scroll or use plus and minus to zoom. Click the lake to make a ripple."></canvas>
+      <section class="landscape-controls" aria-label="Landscape controls">
+        <div class="demo-presets" role="group" aria-label="Light presets"><button data-daylight="1">Day</button><button data-daylight="0.5">Golden hour</button><button data-daylight="0.08">Dusk</button></div>
+        <label class="view-control" for="viewpoint">View
+          <select id="viewpoint"></select>
+        </label>
+        <label class="range-control" for="daylight"><span>Light <output id="daylight-value">Golden</output></span>
+          <input id="daylight" type="range" min="0" max="1" step="0.01" value="0.45" aria-label="Daylight, from dusk to day" />
+        </label>
+        <label class="range-control" for="wind"><span>Wind <output id="wind-value">Gentle</output></span>
+          <input id="wind" type="range" min="0" max="1" step="0.01" value="0.35" />
+        </label>
+        <label for="detail">Detail
+          <select id="detail"><option value="low">Low</option><option value="balanced" selected>Balanced</option><option value="high">High</option></select>
+        </label>
+        <button id="motion" aria-pressed="false">Pause motion</button>
+      </section>
+      <footer>
+        <p class="hint">Drag to explore · Click the lake</p>
+        <div class="metrics" aria-label="Renderer statistics"><span id="geometry-stat"></span><span id="memory-stat"></span></div>
+      </footer>
+      <p id="notice" role="status" hidden></p>
+    </main>
+    <script type="module" src="/src/cabin-viewer.js"></script>
+  </body>
+</html>
